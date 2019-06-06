@@ -54,9 +54,7 @@ if (isset($_POST["update"])) {
 		fwrite($update, "server ".$Server."\n");
 		fwrite($update, "zone ".$Zone."\n");
 		fwrite($update, "update add ".$Address." ".$TTL." ".$Record." ".$IPAddress."\n");
-		fwrite($update, "show\n");
 		fwrite($update, "send\n");
-		fwrite($update, "quit");
 		fclose($update);
 		echo "<span style='color:#e6000d;'><b>Response: </b></span>";
 		#Runs the nsupdate command with input from update.txt
@@ -77,9 +75,7 @@ if (isset($_POST["remove"])) {
 		fwrite($remove, "server rule94.caia.swin.edu.au\n");
 		fwrite($remove, "zone ns1.mydomain\n");
 		#Add line here	fwrite($remove, stuff);
-		fwrite($remove, "show\n");
 		fwrite($remove, "send\n");
-		fwrite($remove, "quit");
 		fclose($remove);
 		#Runs the nsupdate command with input from remove.txt	
 		echo "<span style='color:#e6000d;'><b>Response :</b></span>";
